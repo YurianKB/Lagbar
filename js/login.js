@@ -9,16 +9,27 @@ var correo = document.getElementById('correo');
 var password = document.getElementById('password-registro');
 
 //***BOTONES******
-var btn-login = document.getElementById('btn-login');
-var btn-registro = document.getElementById('btn-registrarse');
+var btnLogin = document.getElementById('btn-login');
+var btnRegistro = document.getElementById('btn-registrarse');
 
 
 //*******FUNCIONES*********
-function enviarRegistroUsuario() {
-	console.log('DATOS USUARIO');
+
+function validarUsuario() {
+	console.log(usuario.value);
+	console.log(passwordLogIn.value);
 }
+
+function enviarRegistroUsuario() {
+	console.log(nombreUsuario.value);
+	console.log(apellido.value);
+	console.log(correo.value);
+	console.log(password.value);
+}
+
 //***********EVENTOS*********
-btn-registrarse.addEventListener('click', enviarRegistroUsuario);
+btnLogin.addEventListener('click', validarUsuario);
+btnRegistro.addEventListener('click', enviarRegistroUsuario);
 
 
 
