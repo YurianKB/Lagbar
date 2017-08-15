@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Datos producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../css/formulario-producto.css">
+  </head>
+  <body class="container">
+  <!-- seccion de nombre de producto y textarea -->
+    <section>
+      <div class="row">
+        <div>
+          <h5 class="center-align">Datos de producto
+            <a href="../home.html"><i class="material-icons flecha-atras">arrow_back</i></a>
+          </h5>
+        </div>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nombre-producto" type="text" class="validate">
+              <label for="nombre-producto">Nombre de producto</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Descripcion</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  <!-- seccion para subir imagenes -->
+    <section>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="imagen1" type="text" class="validate">
+              <label for="imagen1">URL 1</label>
+            </div>
+            <div class="col s6">
+              <a class="waves-effect waves-light btn">Crear</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="imagen2" type="text" class="validate">
+              <label for="imagen2">URL 2</label>
+            </div>
+            <div class="col s6">
+              <a class="waves-effect waves-light btn">Crear</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="imagen3" type="text" class="validate">
+              <label for="imagen3">URL 3</label>
+            </div>
+            <div class="col s6">
+              <a class="waves-effect waves-light btn">Crear</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  <!-- seccion de datos de subasta -->
+    <section>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="precioInicial" type="text" class="validate">
+              <label for="precioInicial">Precio inicial</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="duracionSubasta" type="text" class="validate">
+              <label for="duracionSubasta">Duracion de subasta</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="ubicacion" type="text" class="validate">
+              <label for="ubicacion">Ubicacion</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="tags" type="text" class="validate">
+              <label for="tags">Tags</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div>
+      <a class="waves-effect waves-light btn">Crear</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script src="../app.js"></script>
+    <script>
+    var nombreProducto = document.getElementById("nombre-producto");
+
+    nombreProducto.addEventListener("keypress", cuentaNombre);
+
+    function cuentaNombre(){
+
+    }
+    </script>
+  </body>
+</html>
