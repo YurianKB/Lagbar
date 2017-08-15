@@ -1,0 +1,47 @@
+/*GENERALES*/
+body{
+  background-color: #ECECEC;
+  font-family: ‘Ubuntu’, sans-serif;
+}
+
+.texto-negro{
+  color: #000000;
+}
+
+.texto-blanco{
+  color: #FFFFFF;
+}
+
+.fondo-azul{
+  background-color: #3D76E4;
+}
+
+.fondo-gris{
+  background-color: #ECECEC;
+}
+
+.fondo-blanco{
+  background-color: #FFFFFF;
+}
+
+/*NAVEGADOR*/
+.img-logo-texto{
+  width: 30%;
+  height: 30%;
+}
+
+.texto-logo{
+  margin-top: 0%;
+}
+
+/*catálogo*/
+.imagen-producto{
+width: 10%;
+height: 10%;
+float: left;
+}
+
+.card{
+  width: 40%;
+  height: 40%;
+}
