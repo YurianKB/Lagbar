@@ -1,4 +1,5 @@
 //******VARIABLES*******
+var cont = 0;
 //Datos LogIn
 var usuario = document.getElementById('usuario');
 var passwordLogIn = document.getElementById('password-login');
@@ -28,18 +29,31 @@ function peticionApi() {
 	})
 }
 
-
+// localStorage.setItem("code", codigoGenerado);
 function validarUsuario() {
-	console.log(usuario.value);
-	console.log(passwordLogIn.value);
+	// console.log(usuario.value);
+	// console.log(passwordLogIn.value);
+	localStorage.setItem('usuario', usuario.value);
+	localStorage.setItem('passLogin', passwordLogIn.value);
+	if (localStorage.getItem('usuario') == localStorage.getItem('nombreUs') && localStorage.getItem('passLogin') == localStorage.getItem('pass')) {
+		swal("¡Listo!", "Has iniciado sesión", "success")
+	}else{
+		swal("Lo sentimos", "Usuaio y/o contraseña erroneos, intentalo nuevamente", "error");
+	}
 }
 
 function enviarRegistroUsuario() {
-	console.log(nombreUsuario.value);
-	console.log(apellido.value);
-	console.log(correo.value);
-	console.log(password.value);
-	peticionApi();
+	// console.log(nombreUsuario.value);
+	// console.log(apellido.value);
+	// console.log(correo.value);
+	// console.log(password.value);
+	// peticionApi();
+	localStorage.setItem('nombreUs', nombreUsuario.value);
+	localStorage.setItem('apellido', apellido.value);
+	localStorage.setItem('correo', correo.value);
+	localStorage.setItem('pass', password.value);
+	localStorage.setItem('id-Us', cont++);
+	console.log('Usuario Registrado');
 }
 
 //***********EVENTOS*********
