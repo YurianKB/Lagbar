@@ -41,3 +41,9 @@ body{
   width: 60px;
   height: 60px;
 }
+
+/*MAPA*/
+#map {
+  height:500px;
+  width: 100%;
+}
