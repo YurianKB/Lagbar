@@ -13,25 +13,25 @@
   </head>
   <body class="container">
 	  <div>
-		<h4 class="center-align">Datos de producto
-		  <a href="home.html"><i class="material-icons flecha-atras">arrow_back</i></a>
-	  </h4>
+  		<h4 class="center-align">Datos de producto
+  		  <a href="home.html"><i class="material-icons flecha-atras">arrow_back</i></a>
+  	  </h4>
 	  </div>
   <!-- seccion de nombre de producto y textarea -->
     <section class="container">
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
-              <input id="nombre-producto" type="text" class="validate" placeholder="Máximo 30 caracteres">
-              <label for="nombre-producto">Nombre de producto</label>
+            <div class="input-field col s8">
+              <input id="nombreProducto" type="text" class="validate" placeholder="Máximo 30 caracteres">
+              <label for="nombreProducto">Nombre de producto</label>
               <span id="contador" class="contador">0</span>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <textarea id="descripcion-producto" class="materialize-textarea" placeholder="Máximo 1000 caracteres"></textarea>
-              <label for="descripcion-producto">Descripción</label>
+            <div class="input-field col s8">
+              <textarea id="descripcionProducto" class="materialize-textarea" placeholder="Máximo 1000 caracteres"></textarea>
+              <label for="descripcionProducto">Descripción</label>
             </div>
           </div>
         </form>
@@ -41,25 +41,21 @@
 
   <!-- seccion para subir imagenes -->
     <section class="container">
-		  <h5 class="center"> Agregar imágenes</h5>
+		  <h5 class="center"> Agrega imágenes</h5>
       <div class="row">
         <form class="col s12">
-          <div class="row">
-            <div class="input-field ">
+          <div>
+            <div class="input-field">
               <input id="imagen1" type="text" class="validate">
               <label for="imagen1">URL 1</label>
             </div>
-            <div class="row">
-              <div class="input-field">
-                <input id="imagen2" type="text" class="validate">
-                <label for="imagen2">URL 2</label>
-              </div>
+            <div class="input-field">
+              <input id="imagen2" type="text" class="validate">
+              <label for="imagen2">URL 2</label>
             </div>
-            <div class="row">
-              <div class="input-field">
-                <input id="imagen3" type="text" class="validate">
-                <label for="imagen3">URL 3</label>
-              </div>
+            <div class="input-field">
+              <input id="imagen3" type="text" class="validate">
+              <label for="imagen3">URL 3</label>
             </div>
           </div>
         </form>
@@ -68,23 +64,26 @@
   <!--fin de seccion para subir imagenes -->
 
   <!-- seccion de datos de subasta -->
-    <section>
+    <section class="container">
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s6" id="aqui">
               <input id="precioInicial" type="text" class="validate">
               <label for="precioInicial">Precio inicial</label>
             </div>
 			      <div class="input-field col s6">
               <input id="duracionSubasta" type="text" class="validate">
-              <label for="duracionSubasta">Duracion de subasta</label>
+              <label for="duracionSubasta">Duración de subasta</label>
+
+              <form name="form_reloj">
+                <input type="text" name="reloj" size="10">
+              </form> 
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s6">
-              <input id="ubicacion" type="text" class="validate">
-              <label for="ubicacion">Ubicacion</label>
+            <div class="input-field col s12">
+              <p>Agrega tu ubicación</p>
               <div id="map"></div>
             </div>
 		    	  <div class="input-field col s6">
@@ -96,7 +95,7 @@
       </div>
     </section>
     <div class="row">
-      <a href=home.html class="waves-effect waves-light btn bck-azul offset-s2 col s8">Subastar</a>
+      <a href=home.html class="waves-effect waves-light btn bck-azul offset-s2 col s8 subastar">Subastar</a>
     </div>
 
   <!-- scripts de jquery para que funcione materialize -->
