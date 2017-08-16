@@ -20,6 +20,7 @@ body{
   color: #807F80;
 }
 
+
 .fondo-azul{
   background-color: #3D76E4;
 }
@@ -41,15 +42,6 @@ body{
   width: 60px;
   height: 60px;
 }
-
-/*catálogo*/
-.imagen-producto{
-width: 10%;
-height: 10%;
-float: left;
-}
-
-.card{
-  width: 90%;
-  height: 40%;
-}
+ #back-azul{
+   background-color: #3D76E4;
+ }
