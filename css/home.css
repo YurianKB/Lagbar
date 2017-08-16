@@ -23,15 +23,14 @@ body{
 .fondo-blanco{
   background-color: #FFFFFF;
 }
+.fondo-gris--oscuro{
+  background-color: #807F80;
+}
 
 /*NAVEGADOR*/
 .img-logo-texto{
-  width: 30%;
-  height: 30%;
-}
-
-.texto-logo{
-  margin-top: 0%;
+  width: 60px;
+  height: 60px;
 }
 
 /*catálogo*/
@@ -42,6 +41,6 @@ float: left;
 }
 
 .card{
-  width: 40%;
+  width: 90%;
   height: 40%;
 }
