@@ -35,6 +35,8 @@
         </form>
       </div>
     </section>
+  <!-- fin de seccion de nombre de producto y textarea -->
+
   <!-- seccion para subir imagenes -->
     <section class="container">
 		<h5 class="center"> Agregar imágenes</h5>
@@ -70,6 +72,8 @@
         </form>
       </div>
     </section>
+  <!--fin de seccion para subir imagenes -->
+
   <!-- seccion de datos de subasta -->
     <section>
       <div class="row">
@@ -101,17 +105,9 @@
       <a class="waves-effect waves-light btn bck-azul offset-s2 col s8">Subastar</a>
     </div>
 
+  <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <script src="../app.js"></script>
-    <script>
-    var nombreProducto = document.getElementById("nombre-producto");
-
-    nombreProducto.addEventListener("keypress", cuentaNombre);
-
-    function cuentaNombre(){
-
-    }
-    </script>
+    <script src="../js/formulario-producto.js"></script>
   </body>
 </html>
