@@ -27,11 +27,11 @@ function peticionApi() {
 
          '</div>'+
             '<div class="card-content">'+
-
+              '<p>--titulo-- </p>'+
               '<p>Precio Base:<span>--baseprice--</span></p>'+
               '<p>Precio de inicio de subasta<span></span></p>'+
               '<p>Duración: <span>--duracion--</span></p>'+
-
+              '<a href="detalle-producto.html"> ver más </a>'+
             '</div>'+
           '</div>'+
         '</div>'+
@@ -42,10 +42,11 @@ function peticionApi() {
 
          '</div>'+
             '<div class="card-content">'+
+            '<p>Producto </p>'+
               '<p>Precio Base:<span>--baseprice1--</span></p>'+
               '<p>Precio de inicio de subasta<span></span></p>'+
               '<p>Duración:<span>--duracion1--</span></p>'+
-
+              '<a href="detalle-producto.html"> ver más </a>'+
             '</div>'+
           '</div>'+
         '</div>'+
@@ -59,6 +60,7 @@ var mostrardetalles =function(detalles) {
     .replace("--baseprice--",detalle.basePrice)
     .replace("--duracion1--",detalle.duration)
     .replace("--baseprice1--",detalle.basePrice)
+    .replace("--titulo--", detalle.title)
 
 
 
