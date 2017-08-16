@@ -16,6 +16,10 @@ body{
   color: #3D76E4;
 }
 
+.texto-gris--oscuro{
+  color: #807F80;
+}
+
 .fondo-azul{
   background-color: #3D76E4;
 }
@@ -27,6 +31,7 @@ body{
 .fondo-blanco{
   background-color: #FFFFFF;
 }
+
 .fondo-gris--oscuro{
   background-color: #807F80;
 }
