@@ -18,6 +18,8 @@ function irHome() {
 	setTimeout(function () {
 		location.href='home.html';
 	},2000);
+	// var btLog = document.getElementById('bt-log').style.display = "none";
+
 }
 
 function registrarUsuario() {
