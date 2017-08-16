@@ -69,6 +69,13 @@ Cámara DSLR de la marca Canon, <br>Cuenta con una resolución de 18 MP, <br>Sen
 			</form>
 		</div>
 	</div>
+	<!--Mapa-->
+	<div class="row center-align">
+		<div class="col s12">
+			<h3>Ubicación</h3>
+			<div id="map"></div>
+		</div>	
+	 </div>
 
 	<!--footer-->
 	<footer class="page-footer fondo-azul center-align">
@@ -82,7 +89,8 @@ Cámara DSLR de la marca Canon, <br>Cuenta con una resolución de 18 MP, <br>Sen
 
 
 
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4iymXK1ONZLyM23PI4ne3-pjxXFQD6ZM&callback=initMap"
+    async defer></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 	<script src="../detalleproducto.js"></script>
