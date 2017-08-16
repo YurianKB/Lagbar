@@ -36,12 +36,19 @@ body{
   background-color: #807F80;
 }
 
+/*MARGENES*/
+.mt-010{
+	margin-top: -10vh;
+}
 /*NAVEGADOR*/
 .img-logo-texto{
   width: 60px;
   height: 60px;
 }
 
+span{
+	text-align: justify;
+}
 /*MAPA*/
 #map {
   height:500px;
