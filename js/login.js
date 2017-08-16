@@ -28,6 +28,8 @@ function registrarUsuario() {
 			dataType: 'json'
 		}).then(function (respuesta) {
 		console.log(respuesta);
+		// console.log('TOKEN:' + respuesta.accessToken);
+		localStorage.setItem('tokenUsuario', respuesta.accessToken);
 		swal("¡Listo!", "Usuario registrado", "success");
 	}).fail(function (error) {
 		console.log(error);
