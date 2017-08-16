@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../css/formulario-producto.css">
   </head>
   <body class="container">
+	  <div>
+		<h4 class="center-align">Datos de producto
+		  <a href="home.html"><i class="material-icons flecha-atras">arrow_back</i></a>
+	  </h4>
+	  </div>
   <!-- seccion de nombre de producto y textarea -->
-    <section>
+    <section class="container">
       <div class="row">
-        <div>
-          <h5 class="center-align">Datos de producto
-            <a href="../home.html"><i class="material-icons flecha-atras">arrow_back</i></a>
-          </h5>
-        </div>
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
@@ -39,25 +39,26 @@
   <!-- fin de seccion de nombre de producto y textarea -->
 
   <!-- seccion para subir imagenes -->
-    <section>
+    <section class="container">
+		  <h5 class="center"> Agregar imágenes</h5>
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field ">
               <input id="imagen1" type="text" class="validate">
               <label for="imagen1">URL 1</label>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="imagen2" type="text" class="validate">
-              <label for="imagen2">URL 2</label>
+            <div class="row">
+              <div class="input-field">
+                <input id="imagen2" type="text" class="validate">
+                <label for="imagen2">URL 2</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="imagen3" type="text" class="validate">
-              <label for="imagen3">URL 3</label>
+            <div class="row">
+              <div class="input-field">
+                <input id="imagen3" type="text" class="validate">
+                <label for="imagen3">URL 3</label>
+              </div>
             </div>
           </div>
         </form>
@@ -74,9 +75,7 @@
               <input id="precioInicial" type="text" class="validate">
               <label for="precioInicial">Precio inicial</label>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
+			      <div class="input-field col s6">
               <input id="duracionSubasta" type="text" class="validate">
               <label for="duracionSubasta">Duracion de subasta</label>
             </div>
@@ -85,22 +84,19 @@
             <div class="input-field col s6">
               <input id="ubicacion" type="text" class="validate">
               <label for="ubicacion">Ubicacion</label>
+              <div id="map"></div>
             </div>
-            <div id="map"></div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
+		    	  <div class="input-field col s6">
               <input id="tags" type="text" class="validate">
               <label for="tags">Tags</label>
             </div>
           </div>
         </form>
       </div>
-      <div>
-        <a class="waves-effect waves-light btn" id="crearSubasta">Crear</a>
-      </div>
     </section>
-  <!-- fin de seccion de datos de subasta -->
+    <div class="row">
+      <a class="waves-effect waves-light btn bck-azul offset-s2 col s8">Subastar</a>
+    </div>
 
   <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

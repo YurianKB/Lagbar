@@ -16,3 +16,15 @@
   height: 400px;
   width: 100%;
 }
+
+.bck-azul{
+	background-color: #3D76E4;
+}
+
+.bck-grisClaro{
+	background-color: #ECECEC;
+}
+
+h5{
+	margin-bottom: 5vh;
+}

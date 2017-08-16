@@ -1,6 +1,6 @@
 function cargarhome() {
 	setTimeout(function () {
-		location.href = 'home.html';
+		location.href = 'views/home.html';
 	}, 3000);
 }
 
