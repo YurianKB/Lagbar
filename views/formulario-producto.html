@@ -22,14 +22,15 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input id="nombre-producto" type="text" class="validate">
+              <input id="nombre-producto" type="text" class="validate" placeholder="Máximo 30 caracteres">
               <label for="nombre-producto">Nombre de producto</label>
+              <span id="contador" class="contador">0</span>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Descripcion</label>
+              <textarea id="descripcion-producto" class="materialize-textarea" placeholder="Máximo 1000 caracteres"></textarea>
+              <label for="descripcion-producto">Descripción</label>
             </div>
           </div>
         </form>
@@ -85,6 +86,7 @@
               <input id="ubicacion" type="text" class="validate">
               <label for="ubicacion">Ubicacion</label>
             </div>
+            <div id="map"></div>
           </div>
           <div class="row">
             <div class="input-field col s6">
@@ -103,6 +105,8 @@
   <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6RQX5EhXV7DX8nNpY7It71l_QcvupJl0&callback=initMap"></script>
     <script src="../js/formulario-producto.js"></script>
   </body>
 </html>
