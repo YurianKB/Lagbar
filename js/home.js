@@ -15,7 +15,7 @@ function peticionApi() {
         // return respuesta.json();
     }).fail(function (error) {
         console.log(error);
-   
+
     })
 };
   var plantillaproducto=
@@ -24,13 +24,14 @@ function peticionApi() {
           '<div class="card">'+
             '<div class="card-image">'+
               '<img src="../assets/img/camara.jpg">'+
-             
+
          '</div>'+
             '<div class="card-content">'+
-               
+              '<p>Titulo:  --titulo--</p>'+
               '<p>Precio Base:<span>--baseprice--</span></p>'+
               '<p>Precio de inicio de subasta<span></span></p>'+
               '<p>Duración: <span>--duracion--</span></p>'+
+              '<a href="detalle-producto.html">Ver más</a>'+
 
             '</div>'+
           '</div>'+
@@ -39,32 +40,34 @@ function peticionApi() {
           '<div class="card">'+
             '<div class="card-image">'+
               '<img src="../assets/img/camara.jpg">'+
-             
+
          '</div>'+
             '<div class="card-content">'+
+            '<p>Titulo:  --titulo--</p>'+
               '<p>Precio Base:<span>--baseprice1--</span></p>'+
               '<p>Precio de inicio de subasta<span></span></p>'+
               '<p>Duración:<span>--duracion1--</span></p>'+
-
+              '<a href="detalle-producto.html">Ver más</a>'+
             '</div>'+
           '</div>'+
         '</div>'+
       '</div>';
-      
+
 var mostrardetalles =function(detalles) {
   var plantillaFinal="";
   detalles.forEach(function (detalle) {
-    
+
     plantillaFinal += plantillaproducto.replace("--duracion--",detalle.duration)
     .replace("--baseprice--",detalle.basePrice)
     .replace("--duracion1--",detalle.duration)
     .replace("--baseprice1--",detalle.basePrice)
-    
-    
+    .replace("--titulo--",detalle.title)
+
+
 
     precioinicio=detalle.basePrice;
-    
+
       $(".tarjetas").html(plantillaFinal);
- 
+
   });
 };peticionApi();
