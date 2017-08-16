@@ -14,6 +14,20 @@ var btnRegistro = document.getElementById('btn-registrarse');
 
 
 //*******FUNCIONES*********
+function peticionApi() {
+	$.post('http://ec2-34-200-214-148.compute-1.amazonaws.com:4000/api/auth/signup',{
+		"firsName": nombreUsuario.value,
+		"lastName": apellido.value,
+		"email": correo.value,
+		"password": password.value
+	}).then(function (respuesta) {
+		console.log(respuesta);
+		// return respuesta.json();
+	}).fail(function (error) {
+		console.log(error);
+	})
+}
+
 
 function validarUsuario() {
 	console.log(usuario.value);
@@ -25,6 +39,7 @@ function enviarRegistroUsuario() {
 	console.log(apellido.value);
 	console.log(correo.value);
 	console.log(password.value);
+	peticionApi();
 }
 
 //***********EVENTOS*********
