@@ -1,5 +1,4 @@
 //******VARIABLES*******
-var cont = 0;
 //Datos LogIn
 var usuario = document.getElementById('usuario');
 var passwordLogIn = document.getElementById('password-login');
@@ -15,17 +14,24 @@ var btnRegistro = document.getElementById('btn-registrarse');
 
 
 //*******FUNCIONES*********
-function peticionApi() {
-	$.post('http://ec2-34-200-214-148.compute-1.amazonaws.com:4000/api/auth/signup',{
-		"firsName": nombreUsuario.value,
-		"lastName": apellido.value,
-		"email": correo.value,
-		"password": password.value
-	}).then(function (respuesta) {
+function registrarUsuario() {
+	$.ajax({
+			type: 'POST',
+			url: 'https://laboratoria-hack.herokuapp.com/api/auth/signup',
+			contentType: 'application/json',
+			data:JSON.stringify({
+				"firsName": nombreUsuario.value,
+				"lastName": apellido.value,
+				"email": correo.value,
+				"password": password.value
+			}),
+			dataType: 'json'
+		}).then(function (respuesta) {
 		console.log(respuesta);
-		// return respuesta.json();
+		swal("¡Listo!", "Usuario registrado", "success");
 	}).fail(function (error) {
 		console.log(error);
+		swal("Lo sentimos", "Datos incorrectos y/o incompletos, inténtalo nuevamente", "error");
 	})
 }
 
@@ -38,33 +44,42 @@ function validarUsuario() {
 	if (localStorage.getItem('usuario') == localStorage.getItem('nombreUs') && localStorage.getItem('passLogin') == localStorage.getItem('pass')) {
 		swal("¡Listo!", "Has iniciado sesión", "success")
 	}else{
-		swal("Lo sentimos", "Usuaio y/o contraseña erroneos, intentalo nuevamente", "error");
+		swal("Lo sentimos", "Usuario y/o contraseña erroneos, intentalo nuevamente", "error");
 	}
 }
 
-function enviarRegistroUsuario() {
+function loginUsuario() {
 	// console.log(nombreUsuario.value);
 	// console.log(apellido.value);
 	// console.log(correo.value);
 	// console.log(password.value);
-	// peticionApi();
-	localStorage.setItem('nombreUs', nombreUsuario.value);
-	localStorage.setItem('apellido', apellido.value);
-	localStorage.setItem('correo', correo.value);
-	localStorage.setItem('pass', password.value);
-	localStorage.setItem('id-Us', cont++);
-	console.log('Usuario Registrado');
+	// localStorage.setItem('nombreUs', nombreUsuario.value);
+	// localStorage.setItem('apellido', apellido.value);
+	// localStorage.setItem('correo', correo.value);
+	// localStorage.setItem('pass', password.value);
+	// localStorage.setItem('id-Us', cont++);
+	// console.log('Usuario Registrado');
+	$.ajax({
+			type: 'POST',
+			url: 'https://laboratoria-hack.herokuapp.com/api/auth/login',
+			contentType: 'application/json',
+			data:JSON.stringify({
+				"email": usuario.value,
+				"password": passwordLogIn.value
+			}),
+			dataType: 'json'
+		}).then(function (respuesta) {
+		console.log(respuesta);
+		swal("¡Listo!", "Has iniciado sesión", "success");
+	}).fail(function (error) {
+		console.log(error);
+		swal("Lo sentimos", "Usuario y/o contraseña erróneos, inténtalo nuevamente", "error");
+	})
 }
 
 //***********EVENTOS*********
-btnLogin.addEventListener('click', validarUsuario);
-btnRegistro.addEventListener('click', enviarRegistroUsuario);
-
-
-
-
-
-
+btnLogin.addEventListener('click', loginUsuario);
+btnRegistro.addEventListener('click', registrarUsuario);
 
 // Carga de modal
 $(document).ready(function(){
