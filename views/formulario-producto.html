@@ -22,14 +22,15 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input id="nombre-producto" type="text" class="validate">
+              <input id="nombre-producto" type="text" class="validate" placeholder="Máximo 30 caracteres">
               <label for="nombre-producto">Nombre de producto</label>
+              <span id="contador" class="contador">0</span>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Descripcion</label>
+              <textarea id="descripcion-producto" class="materialize-textarea" placeholder="Máximo 1000 caracteres"></textarea>
+              <label for="descripcion-producto">Descripción</label>
             </div>
           </div>
         </form>
@@ -39,34 +40,25 @@
 
   <!-- seccion para subir imagenes -->
     <section class="container">
-		<h5 class="center"> Agregar imágenes</h5>
+		  <h5 class="center"> Agregar imágenes</h5>
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field ">
               <input id="imagen1" type="text" class="validate">
               <label for="imagen1">URL 1</label>
             </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn bck-azul">Agregar</a>
+            <div class="row">
+              <div class="input-field">
+                <input id="imagen2" type="text" class="validate">
+                <label for="imagen2">URL 2</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="imagen2" type="text" class="validate">
-              <label for="imagen2">URL 2</label>
-            </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn bck-azul">Agregar</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="imagen3" type="text" class="validate">
-              <label for="imagen3">URL 3</label>
-            </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn bck-azul">Agregar</a>
+            <div class="row">
+              <div class="input-field">
+                <input id="imagen3" type="text" class="validate">
+                <label for="imagen3">URL 3</label>
+              </div>
             </div>
           </div>
         </form>
@@ -83,7 +75,7 @@
               <input id="precioInicial" type="text" class="validate">
               <label for="precioInicial">Precio inicial</label>
             </div>
-			<div class="input-field col s6">
+			      <div class="input-field col s6">
               <input id="duracionSubasta" type="text" class="validate">
               <label for="duracionSubasta">Duracion de subasta</label>
             </div>
@@ -92,8 +84,9 @@
             <div class="input-field col s6">
               <input id="ubicacion" type="text" class="validate">
               <label for="ubicacion">Ubicacion</label>
+              <div id="map"></div>
             </div>
-			<div class="input-field col s6">
+		    	  <div class="input-field col s6">
               <input id="tags" type="text" class="validate">
               <label for="tags">Tags</label>
             </div>
@@ -108,6 +101,8 @@
   <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6RQX5EhXV7DX8nNpY7It71l_QcvupJl0&callback=initMap"></script>
     <script src="../js/formulario-producto.js"></script>
   </body>
 </html>

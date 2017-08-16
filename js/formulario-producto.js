@@ -1,26 +1,39 @@
-// var nombreProducto = document.getElementById("nombre-producto");
-//
-// nombreProducto.addEventListener("keypress", cuentaNombre);
+(function () {
+  // var contador = 0;
+  var letras = 30;
 
-// function cuentaNombre(){
-//   var nombreProducto
-// }
+  var cargarPagina = function () {
+    // Envío de Tweet
+    $("#nombre-producto").keyup(cuentaNombre);
+    $("#descripcion-producto").keyup(cuentaDescripcion);
+  };
+
+  var cuentaNombre = function (){
+    var letras = $("#nombre-producto").val().length;
+
+    if(letras >=30){
+      $("#nombre-producto").attr("disabled", true);
+    }
+
+    if(letras >= 20){
+      $("#contador").css("color", "red");
+    }
+
+    $("#contador").text(letras);
+  };
+
+  var cuentaDescripcion = function (){
+    var letras = $("#descripcion-producto").val().length;
+
+    if(letras >=1000){
+      $("#descripcion-producto").attr("disabled", true);
+    }
+  };
 
 
-// Se obtiene ubicacion ingresada del usuario
-var crearSubasta = document.getElementById("crearSubasta");
 
-crearSubasta.addEventListener("click", ubicacion);
 
-function ubicacion (){
-  var ubicacion = document.getElementById("ubicacion");
 
-  var direccionIngresada = ubicacion.value
-
-  if (typeof(Storage) !== "undefined") {
-    // Store
-    localStorage.setItem("lastname", direccionIngresada);
-    // Retrieve
-    var lala = localStorage.getItem("lastname");
-  }
-}
+  // Cuando carga la página
+  $(document).ready(cargarPagina);
+})();
