@@ -35,6 +35,8 @@
         </form>
       </div>
     </section>
+  <!-- fin de seccion de nombre de producto y textarea -->
+
   <!-- seccion para subir imagenes -->
     <section>
       <div class="row">
@@ -44,17 +46,11 @@
               <input id="imagen1" type="text" class="validate">
               <label for="imagen1">URL 1</label>
             </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn">Crear</a>
-            </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
               <input id="imagen2" type="text" class="validate">
               <label for="imagen2">URL 2</label>
-            </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn">Crear</a>
             </div>
           </div>
           <div class="row">
@@ -62,13 +58,12 @@
               <input id="imagen3" type="text" class="validate">
               <label for="imagen3">URL 3</label>
             </div>
-            <div class="col s6">
-              <a class="waves-effect waves-light btn">Crear</a>
-            </div>
           </div>
         </form>
       </div>
     </section>
+  <!--fin de seccion para subir imagenes -->
+
   <!-- seccion de datos de subasta -->
     <section>
       <div class="row">
@@ -99,22 +94,15 @@
           </div>
         </form>
       </div>
+      <div>
+        <a class="waves-effect waves-light btn" id="crearSubasta">Crear</a>
+      </div>
     </section>
-    <div>
-      <a class="waves-effect waves-light btn">Crear</a>
-    </div>
+  <!-- fin de seccion de datos de subasta -->
 
+  <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <script src="../app.js"></script>
-    <script>
-    var nombreProducto = document.getElementById("nombre-producto");
-
-    nombreProducto.addEventListener("keypress", cuentaNombre);
-
-    function cuentaNombre(){
-
-    }
-    </script>
+    <script src="../js/formulario-producto.js"></script>
   </body>
 </html>
