@@ -74,7 +74,7 @@ var userId = decoded.userId
   .then(function (respuesta) {
     console.log(respuesta);
     swal("Listo", "Tu producto ha sido agregado al catálogo de subastas", "success");
-    location.href("home.html");
+    setTimeout (function(){location.href = "../views/home.html"}, 2000);
 
   }).fail(function (error) {
     swal("Lo sentimos", "Ocurrió un error, vuelve a intentarlo más tarde", "success")
