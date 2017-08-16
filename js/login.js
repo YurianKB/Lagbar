@@ -14,6 +14,12 @@ var btnRegistro = document.getElementById('btn-registrarse');
 
 
 //*******FUNCIONES*********
+function irHome() {
+	setTimeout(function () {
+		location.href='home.html';
+	},2000);
+}
+
 function registrarUsuario() {
 	$.ajax({
 			type: 'POST',
@@ -31,36 +37,25 @@ function registrarUsuario() {
 		// console.log('TOKEN:' + respuesta.accessToken);
 		localStorage.setItem('tokenUsuario', respuesta.accessToken);
 		swal("¡Listo!", "Usuario registrado", "success");
+		irHome();
 	}).fail(function (error) {
 		console.log(error);
 		swal("Lo sentimos", "Datos incorrectos y/o incompletos, inténtalo nuevamente", "error");
 	})
 }
 
-// localStorage.setItem("code", codigoGenerado);
 function validarUsuario() {
-	// console.log(usuario.value);
-	// console.log(passwordLogIn.value);
 	localStorage.setItem('usuario', usuario.value);
 	localStorage.setItem('passLogin', passwordLogIn.value);
 	if (localStorage.getItem('usuario') == localStorage.getItem('nombreUs') && localStorage.getItem('passLogin') == localStorage.getItem('pass')) {
-		swal("¡Listo!", "Has iniciado sesión", "success")
+		swal("¡Listo!", "Has iniciado sesión", "success");
+		irHome();
 	}else{
 		swal("Lo sentimos", "Usuario y/o contraseña erroneos, intentalo nuevamente", "error");
 	}
 }
 
 function loginUsuario() {
-	// console.log(nombreUsuario.value);
-	// console.log(apellido.value);
-	// console.log(correo.value);
-	// console.log(password.value);
-	// localStorage.setItem('nombreUs', nombreUsuario.value);
-	// localStorage.setItem('apellido', apellido.value);
-	// localStorage.setItem('correo', correo.value);
-	// localStorage.setItem('pass', password.value);
-	// localStorage.setItem('id-Us', cont++);
-	// console.log('Usuario Registrado');
 	$.ajax({
 			type: 'POST',
 			url: 'https://laboratoria-hack.herokuapp.com/api/auth/login',
@@ -73,6 +68,7 @@ function loginUsuario() {
 		}).then(function (respuesta) {
 		console.log(respuesta);
 		swal("¡Listo!", "Has iniciado sesión", "success");
+		irHome();
 	}).fail(function (error) {
 		console.log(error);
 		swal("Lo sentimos", "Usuario y/o contraseña erróneos, inténtalo nuevamente", "error");
