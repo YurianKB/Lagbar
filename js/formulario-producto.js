@@ -1,13 +1,14 @@
 (function () {
   var letras = 30;
 
+//carga variables y asigna eventos
   var cargarPagina = function () {
     $("#nombreProducto").keyup(cuentaNombre);
     $("#descripcionProducto").keyup(cuentaDescripcion);
-    // $("#precioInicial").click(agregarImagen);
     $(".subastar").click(peticionApi);
   };
 
+//funcion para validar el input de titulo del producto con menos de 30 caracteres
   var cuentaNombre = function (){
     var letras = $("#nombreProducto").val().length;
     var nombreDeProducto = $("#nombreProducto").val().length;
@@ -30,6 +31,7 @@
     $("#contador").text(letras);
   };
 
+//funcion para validar la descripcion menor a 1000 caracteres
   var cuentaDescripcion = function (){
     var letras = $("#descripcionProducto").val().length;
     var valorDescripcion = $("#descripcionProducto").val();
@@ -46,23 +48,20 @@
     }
   };
 
-//crea dinamicamente la imagen del signo de pesos
-  // function agregarImagen(){
-  //   var pesitos = $("#aqui").prepend("<img src='../assets/img/dolar.svg' width='10'/>");
-  //
-  // }
-
-//API
-
+//Llamado de API
 var peticionApi = function (e) {
 e.preventDefault();
 
-var jaja = $("#nombreProducto").val();
+var token = localStorage.getItem("tokenUsuario");
 
-console.log(precioInicial.value, duracionSubasta.value, descripcionProducto.value);
+var decoded = jwt_decode(token);
+console.log(decoded);
+var userId = decoded.userId
+
   $.ajax({
     type: 'POST',
-    url: 'https://laboratoria-hack.herokuapp.com/api/user/:/auction',
+    url: 'https://laboratoria-hack.herokuapp.com/api/user/' + userId +'/auction',
+    headers: {"Authorization": "Bearer ".concat(token)},
     contentType: 'application/json',
     data:JSON.stringify({
       "basePrice": precioInicial.value,
@@ -74,10 +73,13 @@ console.log(precioInicial.value, duracionSubasta.value, descripcionProducto.valu
   })
   .then(function (respuesta) {
     console.log(respuesta);
-    // return respuesta.json();
+    swal("Listo", "Tu producto ha sido agregado al catálogo de subastas", "success");
+    location.href("home.html");
+
   }).fail(function (error) {
-    console.log(error);
+    swal("Lo sentimos", "Ocurrió un error, vuelve a intentarlo más tarde", "success")
   })
+
 }
 
   // Carga la página

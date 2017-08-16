@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/dist/sweetalert.css">
     <link rel="stylesheet" href="../css/formulario-producto.css">
   </head>
   <body class="container">
@@ -22,14 +23,14 @@
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s8">
+            <div class="input-field">
               <input id="nombreProducto" type="text" class="validate" placeholder="Máximo 30 caracteres">
               <label for="nombreProducto">Nombre de producto</label>
               <span id="contador" class="contador">0</span>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s8">
+            <div class="input-field">
               <textarea id="descripcionProducto" class="materialize-textarea" placeholder="Máximo 1000 caracteres"></textarea>
               <label for="descripcionProducto">Descripción</label>
             </div>
@@ -69,16 +70,12 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6" id="aqui">
-              <input id="precioInicial" type="text" class="validate">
+              <input id="precioInicial" type="text" class="validate" placeholder="Ingrese cantidad en pesos">
               <label for="precioInicial">Precio inicial</label>
             </div>
 			      <div class="input-field col s6">
-              <input id="duracionSubasta" type="text" class="validate">
+              <input id="duracionSubasta" type="text" class="validate" placeholder="Ingrese # de minutos">
               <label for="duracionSubasta">Duración de subasta</label>
-
-              <form name="form_reloj">
-                <input type="text" name="reloj" size="10">
-              </form> 
             </div>
           </div>
           <div class="row">
@@ -86,7 +83,7 @@
               <p>Agrega tu ubicación</p>
               <div id="map"></div>
             </div>
-		    	  <div class="input-field col s6">
+		    	  <div class="input-field col s12">
               <input id="tags" type="text" class="validate">
               <label for="tags">Tags</label>
             </div>
@@ -101,8 +98,10 @@
   <!-- scripts de jquery para que funcione materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/jwt-decode.min.js"></script> <!--script para decodificar el id token -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6RQX5EhXV7DX8nNpY7It71l_QcvupJl0&callback=initMap"></script>
+    <script src="../assets/dist/sweetalert.min.js"></script>
     <script src="../js/formulario-producto.js"></script>
   </body>
 </html>
