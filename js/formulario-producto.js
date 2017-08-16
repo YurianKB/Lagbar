@@ -10,6 +10,7 @@
 
   var cuentaNombre = function (){
     var letras = $("#nombreProducto").val().length;
+    var nombreDeProducto = $("#nombreProducto").val().length;
 
     if(letras >=30){
       $("#nombreProducto").attr("disabled", true);
@@ -19,14 +20,29 @@
       $("#contador").css("color", "red");
     }
 
+    if (typeof(Storage) !== "undefined") {
+      // Store
+      localStorage.setItem("tituloProducto", nombreDeProducto);
+      // Retrieve
+      localStorage.getItem("tituloProducto");
+    }
+
     $("#contador").text(letras);
   };
 
   var cuentaDescripcion = function (){
     var letras = $("#descripcionProducto").val().length;
+    var valorDescripcion = $("#descripcionProducto").val();
 
     if(letras >=1000){
       $("#descripcionProducto").attr("disabled", true);
+    }
+
+    if (typeof(Storage) !== "undefined") {
+      // Store
+      localStorage.setItem("descripcion", valorDescripcion);
+      // Retrieve
+      localStorage.getItem("descripcion");
     }
   };
 
@@ -38,23 +54,26 @@
 
 //API
 
-var peticionApi = function () {
+var peticionApi = function (e) {
+e.preventDefault();
 
+var jaja = $("#nombreProducto").val();
+
+console.log(precioInicial.value, duracionSubasta.value, descripcionProducto.value);
   $.ajax({
     type: 'POST',
-    url: 'https://laboratoria-hack.herokuapp.com/api/user/:userId/auction',
+    url: 'https://laboratoria-hack.herokuapp.com/api/user/:/auction',
     contentType: 'application/json',
     data:JSON.stringify({
-      "titulo": nombreProducto.value,
-      "descripcion": descripcionProducto.value,
-      "precioBase": precioInicial.value,
-      "duracion": duracionSubasta.value,
-      "tags": tags.value
+      "basePrice": precioInicial.value,
+      "duration": duracionSubasta.value,
+      "title": nombreProducto.value,
+      "description": descripcionProducto.value
     }),
     dataType: 'json'
   })
   .then(function (respuesta) {
-    console.log(respuesta.data.descripcion);
+    console.log(respuesta);
     // return respuesta.json();
   }).fail(function (error) {
     console.log(error);
@@ -64,8 +83,6 @@ var peticionApi = function () {
   // Carga la página
   $(document).ready(cargarPagina);
 })();
-
-
 
 
 function initMap() {
